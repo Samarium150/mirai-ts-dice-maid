@@ -5,7 +5,8 @@
     "main": "index.ts",
     "scripts": {
         "build": "npx gulp",
-        "test": "npx jest -u"
+        "test": "npx jest -u",
+        "start": "ts-node src/index.ts"
     },
     "devDependencies": {
         "@types/eslint": "^7.2.6",
@@ -31,12 +32,12 @@
     },
     "repository": {
         "type": "Git",
-        "url": "https://github.com/Samarium150/typescript-project-template"
+        "url": "https://github.com/Samarium150/mirai-ts-dice-maid"
     },
     "keywords": [
-        "template",
+        "mirai",
         "typescript"
     ],
     "author": "Samarium",
-    "license": "MIT"
+    "license": "AGPL-3.0-or-later"
 }

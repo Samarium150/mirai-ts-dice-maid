@@ -1,11 +1,22 @@
+import Mirai from "mirai-ts";
+import config from "./config";
+
+/**
+ * Mirai instance
+ */
+const mirai = new Mirai(config.settings);
+
 /**
  * Main entry point
- * @param str
  */
-function main(str: string): string {
-    return "Hello, " + str;
+async function main(): Promise<void> {
+    await mirai.link(config.qq);
+    mirai.on("message", (msg) => {
+        console.log(msg);
+        // 复读
+        void msg.reply(msg.messageChain);
+    });
+    mirai.listen();
 }
 
-export {
-    main
-};
+void main();
