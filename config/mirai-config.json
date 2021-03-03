@@ -1,0 +1,9 @@
+{
+    "qq": 123456789,
+    "settings": {
+        "host": "127.0.0.1",
+        "port": 7720,
+        "authKey": "el-psy-congroo",
+        "enableWebsocket": true
+    }
+}
