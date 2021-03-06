@@ -31,7 +31,7 @@ const mirai = new Mirai(config["settings"]);
  * Main entry point
  */
 async function main(): Promise<void> {
-    //Maid.updateConfig();
+    Maid.updateConfig();
     await mirai.link(config["qq"]);
     mirai.on("message", (msg) => {
         console.log(msg);

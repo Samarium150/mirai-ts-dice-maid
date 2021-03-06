@@ -14,6 +14,9 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>
  */
+
+jest.mock("../src/utils");
+import {readConfig} from "../src/utils";
 import Maid from "../src/Maid";
 import Config from "../src/config";
 import {ChatMessage} from "mirai-ts/dist/types/message-type";
@@ -66,7 +69,12 @@ describe("validate", () => {
         test("getConfig", () => {
             expect(Maid.getConfig().skillDefault).toEqual(25);
         });
-
+        test("updateConfig", () => {
+            config.skillDefault = 20;
+            (readConfig as jest.Mock).mockReturnValue(config);
+            Maid.updateConfig();
+            expect(Maid.getConfig().skillDefault).toEqual(20);
+        });
         describe("command", () => {
             test("notMatched", () => {
                 friendMessage.plain = "测试";

@@ -35,13 +35,13 @@ export abstract class Maid {
      */
     private static config = readConfig("config/maid-config.json");
 
-    // /**
-    // * @return
-    // */
-    // public static updateConfig(): void {
-    //     this.config = readConfig("config/maid-config.json");
-    //     Dice.setConfig(this.config);
-    // }
+    /**
+    * @return
+    */
+    public static updateConfig(): void {
+        this.config = readConfig("config/maid-config.json");
+        Dice.setConfig(this.config);
+    }
 
     /**
      * @return

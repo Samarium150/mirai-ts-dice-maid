@@ -244,7 +244,6 @@ export abstract class Dice {
     public static toss(who: string, dice: string, reason: string): string {
         try {
             const [parsedDice, results] = this.parseDice(dice);
-            //if (parsedDice.length == 0) return "";
             return who
                 + (reason ? `因为${reason}` : "") +
                 ((parsedDice.length == 1 && results.length == 1) ?
