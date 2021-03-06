@@ -1,20 +1,27 @@
 {
     "name": "mirai-ts-dice-maid",
-    "version": "0.1.0",
+    "version": "1.0.0-beta",
     "description": "a dice bot based on mirai-ts",
     "main": "index.ts",
     "scripts": {
-        "build": "npx gulp",
-        "test": "npx jest -u"
+        "test": "npx jest -u",
+        "build": "npx gulp && npm run test",
+        "start": "ts-node src/index.ts",
+        "dev": "ts-node-dev src/index.ts",
+        "changelog": "conventional-changelog -p eslint -i CHANGELOG.md -s"
+    },
+    "dependencies": {
+        "mirai-ts": "^1.0.0-beta.7"
     },
     "devDependencies": {
         "@types/eslint": "^7.2.6",
-        "@types/fs-extra": "^9.0.7",
+        "@types/fs-extra": "^9.0.8",
         "@types/gulp": "^4.0.8",
         "@types/jest": "^26.0.20",
         "@types/node": "^14.14.31",
-        "@typescript-eslint/eslint-plugin": "^4.15.2",
-        "@typescript-eslint/parser": "^4.15.2",
+        "@typescript-eslint/eslint-plugin": "^4.16.1",
+        "@typescript-eslint/parser": "^4.16.1",
+        "conventional-changelog": "^3.1.24",
         "eslint": "^7.20.0",
         "eslint-plugin-jest": "^24.1.5",
         "fs-extra": "^9.1.0",
@@ -23,20 +30,21 @@
         "gulp-typedoc": "^2.2.9",
         "gulp-typescript": "^6.0.0-alpha.1",
         "jest": "^26.6.3",
-        "mirai-ts": "^1.0.0-beta.4",
-        "ts-jest": "^26.5.2",
+        "ts-jest": "^26.5.3",
         "ts-node": "^9.1.1",
-        "typedoc": "^0.20.28",
-        "typescript": "^4.1.5"
+        "ts-node-dev": "^1.1.6",
+        "typedoc": "^0.20.29",
+        "typescript": "^4.2.3",
+        "xregexp": "^5.0.1"
     },
     "repository": {
         "type": "Git",
-        "url": "https://github.com/Samarium150/typescript-project-template"
+        "url": "https://github.com/Samarium150/mirai-ts-dice-maid"
     },
     "keywords": [
-        "template",
+        "mirai",
         "typescript"
     ],
     "author": "Samarium",
-    "license": "MIT"
+    "license": "AGPL-3.0-or-later"
 }
