@@ -8,17 +8,17 @@ import eslint from "gulp-eslint";
 const paths = {
     root: path.join(__dirname, "/"),
     input: path.join(__dirname, "/src/index.ts"),
-    output: path.join(__dirname, "/lib")
+    output: path.join(__dirname, "/dist")
 };
 
 const project = gulpTypescript.createProject("tsconfig.json");
 
-function clean(callback: Function) {
-    fs.rmdirSync("lib", {recursive: true});
+function clean(callback: Function): void {
+    fs.rmdirSync("dist", { recursive: true });
     callback();
 }
 
-function build() {
+function build(): any {
     return gulp.src(["src/**/*.ts"]).pipe(
         eslint()
     ).pipe(
@@ -28,10 +28,9 @@ function build() {
     );
 }
 
-function doc() {
-    return gulp.src(["src/**/*.ts"]).pipe(
+function doc(): any {
+    return gulp.src(["src/"]).pipe(
         gulpTypedoc({
-            name: "temp",
             out: path.join(paths.output, "/docs"),
             version: true
         })

@@ -5,7 +5,7 @@
 
 # Output
 package-lock.json
-lib/
+dist/
 
 # Logs
 logs

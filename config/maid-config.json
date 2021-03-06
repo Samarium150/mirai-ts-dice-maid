@@ -1,0 +1,10 @@
+{
+    "master": 0,
+    "prefix": ".",
+    "generateMax": 10,
+    "timesMax": 100,
+    "sidesMax": 1000,
+    "skillDefault": 20,
+    "rate": 0,
+    "extraMax": 5
+}
