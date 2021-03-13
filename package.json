@@ -1,6 +1,6 @@
 {
     "name": "mirai-ts-dice-maid",
-    "version": "1.0.1-beta",
+    "version": "1.0.2-beta",
     "description": "a dice bot based on mirai-ts",
     "main": "index.ts",
     "scripts": {
