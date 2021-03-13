@@ -39,7 +39,8 @@ describe("validate", () => {
             friend: () => true,
             reply: () => new Promise<void>(_ => {
                 return _;
-            })
+            }),
+            get: () => null
         };
         groupMessage = {
             type: "GroupMessage",
@@ -62,7 +63,8 @@ describe("validate", () => {
             friend: () => true,
             reply: () => new Promise<void>(_ => {
                 return _;
-            })
+            }),
+            get: () => null,
         };
     });
     describe("maid", () => {

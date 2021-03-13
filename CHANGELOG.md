@@ -1,3 +1,15 @@
+## [1.0.3-beta](https://github.com/Samarium150/mirai-ts-dice-maid/compare/1.0.2-beta...1.0.3-beta) (2021-03-13)
+
+
+### docs
+
+* add CHANGELOG.md ([49e3500](https://github.com/Samarium150/mirai-ts-dice-maid/commit/49e3500225fa04443261d6caf2a6f9495fe30226))
+
+### fix
+
+* update tests ([9bb6cdd](https://github.com/Samarium150/mirai-ts-dice-maid/commit/9bb6cdda27442437ae6de8e0d92f56fe1c15079a))
+
+
 ## 1.0.2-beta (2021-03-13)
 
 
@@ -25,6 +37,3 @@
 
 * change config format ([1a62d28](https://github.com/Samarium150/mirai-ts-dice-maid/commit/1a62d28869c203afc0c2771538f108f587c5a49e))
 * update config when initializing ([7212ba2](https://github.com/Samarium150/mirai-ts-dice-maid/commit/7212ba260b5a25370cb18fe8c06d914ac7e30b50))
-
-
-
