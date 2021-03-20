@@ -23,6 +23,7 @@ import XRegExp from "xregexp";
 import {GroupMessage} from "mirai-ts/dist/types/message-type";
 import {MemberJoinRequestOperationType, NewFriendRequestOperationType} from "mirai-ts/dist/mirai-api-http/resp";
 import {Member} from "mirai-ts/dist/types/contact";
+import {isAt} from "mirai-ts/dist/utils/check";
 
 /**
  * Mirai and Logger instance
@@ -41,7 +42,7 @@ async function main(): Promise<void> {
         const hidden = msg.type == "GroupMessage" && XRegExp.test(msg.plain, XRegExp(`^\\${Maid.getConfig().prefix}h`)),
             quit = msg.type == "GroupMessage" && XRegExp.test(msg.plain, XRegExp(`^\\${Maid.getConfig().prefix}dismiss$`)),
             result = Maid.command(msg);
-        if (quit) {
+        if (quit && isAt(msg, config["qq"])) {
             void msg.reply("摸了摸了");
             await mirai.api.quit((msg.sender as Member).group.id);
             return;
