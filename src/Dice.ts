@@ -181,7 +181,7 @@ export abstract class Dice {
     private static parseDice(dice: string): [Array<string>, Array<number>] {
         const parsedDice: Array<string> = [], results: Array<number> = [];
         XRegExp.forEach(dice, XRegExp("(\\d*d\\d*)|(\\d+)"), (match) => {
-            if (XRegExp("^[1-9]\\d*$").test(match[0])) {
+            if (XRegExp("^([1-9]\\d+)$|^([0-9])$").test(match[0])) {
                 parsedDice.push(match[0]);
                 results.push(parseInt(match[0]));
             } else {

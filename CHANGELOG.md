@@ -1,3 +1,26 @@
+## [1.0.4-beta](https://github.com/Samarium150/mirai-ts-dice-maid/compare/1.0.3-beta...1.0.4-beta) (2021-03-20)
+
+
+### build
+
+* bump up versions ([071b6ba](https://github.com/Samarium150/mirai-ts-dice-maid/commit/071b6ba4f9a312ccc6db819bb81be43742f7dac1))
+
+### docs
+
+* regenerate CHANGELOG.md ([4029f46](https://github.com/Samarium150/mirai-ts-dice-maid/commit/4029f462532881af1af376d2ee632dfc00b3c2f1))
+* remove docs for private members ([13f0997](https://github.com/Samarium150/mirai-ts-dice-maid/commit/13f099796d834499d1c1eebc681d845070ad28d8))
+
+### fix
+
+* add isAt checking for dismiss command ([146ab96](https://github.com/Samarium150/mirai-ts-dice-maid/commit/146ab964b20173e254d4c11e8feccac576b92b06))
+* sanity roll bug on 0 deduction ([ef16ac1](https://github.com/Samarium150/mirai-ts-dice-maid/commit/ef16ac113f3cb66ed918c78fa10853e1ea94b4bd))
+
+### perf
+
+* change random number generation ([75e0e76](https://github.com/Samarium150/mirai-ts-dice-maid/commit/75e0e76579548a587cf3b8cb38f261c0b24122ca))
+
+
+
 ## [1.0.3-beta](https://github.com/Samarium150/mirai-ts-dice-maid/compare/1.0.2-beta...1.0.3-beta) (2021-03-13)
 
 
