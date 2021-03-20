@@ -21,19 +21,15 @@ import Config from "../src/config";
 
 describe("validate", () => {
     describe("utils", () => {
-        test("randomFrom1To6", () => {
+        test("random", () => {
             for (let _ = 0; _ < 100; ++_) {
-                const result = expect(utils.random(1, 6));
+                const result = expect(utils.random.integer(1, 6));
                 result.toBeGreaterThanOrEqual(1);
                 result.toBeLessThanOrEqual(6);
             }
         });
-        test("randomFrom1To100", () => {
-            for (let _ = 0; _ < 100; ++_) {
-                const result = expect(utils.random(1, 100));
-                result.toBeGreaterThanOrEqual(1);
-                result.toBeLessThanOrEqual(100);
-            }
+        test("sum", () => {
+            expect(utils.sum([1, 2, 3, 4])).toEqual(10);
         });
         test("readConfig", () => {
             (fs.readJSONSync as jest.Mock).mockReturnValue({

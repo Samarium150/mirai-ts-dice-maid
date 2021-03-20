@@ -60,8 +60,8 @@ export abstract class Madness {
             name: string,
             symptom: string,
             detail = "";
-        const num = random(0, 9),
-            time = random(1, 10);
+        const num = random.integer(0, 9),
+            time = random.die(10);
         switch(type) {
             case MadnessType.temporary:
                 name = Object.keys(this.temporary)[num];
@@ -77,7 +77,7 @@ export abstract class Madness {
                 return "";
         }
         if (num >= 8) {
-            const sub = random(0, 99),
+            const sub = random.integer(0, 99),
                 detailName = num == 8 ? Object.keys(this.phobia)[sub] : Object.keys(this.mania)[sub],
                 detailSymptom = num == 8 ? this.phobia[detailName] : this.mania[detailName];
             detail = `具体症状: 1d100=${sub + 1}\n${detailName}：${detailSymptom}\n`;

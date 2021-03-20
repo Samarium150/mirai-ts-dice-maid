@@ -16,7 +16,7 @@
  */
 
 jest.mock("../src/utils");
-import {readConfig} from "../src/utils";
+import {readConfig, random} from "../src/utils";
 import Maid from "../src/Maid";
 import Config from "../src/config";
 import {ChatMessage} from "mirai-ts/dist/types/message-type";
@@ -66,6 +66,8 @@ describe("validate", () => {
             }),
             get: () => null,
         };
+        random.die = jest.fn().mockReturnValue(1);
+        random.dice = jest.fn().mockReturnValue([1]);
     });
     describe("maid", () => {
         test("getConfig", () => {

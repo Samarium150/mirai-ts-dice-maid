@@ -17,7 +17,7 @@
  *
  * @module Dice
  */
-import { random } from "./utils";
+import { random, sum } from "./utils";
 import Config from "./config";
 import { Rate, ExtraType } from "./types";
 import XRegExp from "xregexp";
@@ -41,30 +41,18 @@ export abstract class Dice {
     }
 
     /**
-     * 
-     * @param times
-     * @param sides
-     * @return
-     */
-    public static roll(times: number, sides: number): number {
-        let result = 0;
-        for (let _ = 0; _ < times; ++_) result += random(1, sides);
-        return result;
-    }
-
-    /**
      * @return
      */
     private static generate(): string {
-        const strength = this.roll(3, 6) * 5,
-            constitution = this.roll(3, 6) * 5,
-            size = (this.roll(2, 6) + 6) * 5,
-            dexterity = this.roll(3, 6) * 5,
-            appearance = this.roll(3, 6) * 5,
-            intelligence = (this.roll(2, 6) + 6) * 5,
-            power = this.roll(3, 6) * 5,
-            education = (this.roll(2, 6) + 6) * 5,
-            luck = this.roll(3, 6) * 5,
+        const strength = sum(random.dice(6, 3)) * 5,
+            constitution = sum(random.dice(6, 3)) * 5,
+            size = (sum(random.dice(6, 3)) + 6) * 5,
+            dexterity = sum(random.dice(6, 3)) * 5,
+            appearance = sum(random.dice(6, 3)) * 5,
+            intelligence = (sum(random.dice(6, 3)) + 6) * 5,
+            power = sum(random.dice(6, 3)) * 5,
+            education = (sum(random.dice(6, 3)) + 6) * 5,
+            luck = sum(random.dice(6, 3)) * 5,
             total = strength + constitution + size
                 + dexterity + appearance
                 + intelligence + power + education;
@@ -144,7 +132,7 @@ export abstract class Dice {
      * @return
      */
     public static checkSkill(who: string, skill: number, which: string): string {
-        const roll = this.roll(1, 100),
+        const roll = random.die(100),
             result = this.getResult(skill, roll);
         return result ? `${who}进行${which}检定：1d100=${roll}|${skill}，${result}` : "";
     }
@@ -160,17 +148,14 @@ export abstract class Dice {
      */
     public static checkSkillBonusOrPenalty(who: string, skill: number, which: string, type: ExtraType, count: number): string {
         if (count > this.config.extraMax) return "不要扔这么多骰子!";
-        const roll = this.roll(1, 100),
+        const roll = random.die(100),
             ones = roll % 10,
-            tens = (roll - ones) / 10,
-            extras: Array<number> = [];
-        let final: number, t: string;
-        for (let _ = 0; _ < count; ++_) {
-            if (ones == 0)
-                extras.push(this.roll(1, 10));
-            else
-                extras.push(this.roll(1, 10) - 1);
-        }
+            tens = (roll - ones) / 10;
+        let extras: Array<number> = random.dice(10, count),
+            final: number,
+            t: string;
+        if (ones != 0)
+            extras = extras.map(d => d - 1);
         switch (type) {
             case ExtraType.bonus:
                 t = "奖励骰";
@@ -195,11 +180,11 @@ export abstract class Dice {
      * @return
      */
     public static improve(who: string, skill: number, which: string): string {
-        const roll = this.roll(1, 100),
+        const roll = random.die(100),
             result = `${who}进行${which}成长检定：1d100=${roll}|${skill}，`;
         if (roll <= skill)
             return result + "失败";
-        const improvement = this.roll(1, 10);
+        const improvement = random.die(10);
         return result
             + `成功，\n技能增长：1d10=${improvement}，\n`
             + `最终结果：${skill}+${improvement}=${skill+improvement}`;
@@ -226,8 +211,7 @@ export abstract class Dice {
                 if (sides > this.config.sidesMax) throw new RangeError("不要扔这么多面的骰子!");
                 parsedDice.push(`${times}d${sides}`);
                 if (parsedDice.length >= this.config.timesMax) throw new RangeError("不要扔这么多骰子!");
-                for (let _ = 0; _ < times; ++_)
-                    results.push(this.roll(1, sides));
+                results.push(...(random.dice(sides, times)));
             }
         });
         if (parsedDice.length == 0 || results.length == 0) throw new Error("invalid input");
@@ -260,7 +244,7 @@ export abstract class Dice {
      * @return
      */
     public static hiddenToss(dice: string): string {
-        return (dice) ? this.toss("", dice, "") : `投1d100=${this.roll(1, 100)}`;
+        return (dice) ? this.toss("", dice, "") : `投1d100=${random.die(100)}`;
     }
 
     /**
@@ -272,7 +256,7 @@ export abstract class Dice {
      * @return
      */
     public static sanityRoll(who: string, success: string, failure: string, sanity: number): string {
-        const roll = this.roll(1, 100);
+        const roll = random.die(100);
         try {
             let result: string, parsedDice: Array<string>, results: Array<number>;
             if (roll <= sanity) {
@@ -282,12 +266,11 @@ export abstract class Dice {
                 result = "失败";
                 [parsedDice, results] = this.parseDice(failure);
             }
-            //if (parsedDice.length == 0) return "";
-            const sum = results.reduce((a, b) => a + b);
+            const value = sum(results);
             return `${who}进行理智检定：1d100=${roll}|${sanity}， ${result}，\n理智减少`
                 + ((parsedDice.length == 1) ? `${parsedDice.join()}=${results.join()}，\n`
-                    : `${parsedDice.join("+")}=${results.join("+")}=${sum}，\n`)
-                + `最终结果${sanity}-${sum}=${sanity-sum}`;
+                    : `${parsedDice.join("+")}=${results.join("+")}=${value}，\n`)
+                + `最终结果${sanity}-${value}=${sanity-value}`;
         } catch (e) {
             return (e instanceof RangeError) ? e.message : "";
         }

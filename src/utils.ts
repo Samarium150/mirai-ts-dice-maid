@@ -18,18 +18,21 @@
  */
 import Config from "./config";
 import fs from "fs-extra";
+import {Random, MersenneTwister19937} from "random-js";
 
 /**
- * Generate a random integer between min and max (both inclusive)
- * <br>
- * 生成[min, max]之间的随机数
- *
- * @param min
- * @param max
- * @return random generated integer
+ * Instance of random number generator
  */
-export function random(min: number, max: number): number {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+export const random = new Random(MersenneTwister19937.autoSeed());
+
+/**
+ * Get the sum of the given array of numbers
+ *
+ * @param array
+ * @return sum
+ */
+export function sum(array: number[]): number {
+    return array.reduce((a, b) => a + b);
 }
 
 /**
@@ -38,7 +41,7 @@ export function random(min: number, max: number): number {
  * 读取JSON配置文件
  *
  * @param file
- * @return
+ * @return configuration
  */
 export function readConfig(file: string): Config {
     return Object.assign(new Config(), fs.readJSONSync(file) as string);
