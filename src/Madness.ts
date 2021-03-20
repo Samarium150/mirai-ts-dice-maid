@@ -25,24 +25,12 @@ import { random } from "./utils";
  */
 export abstract class Madness {
 
-    /**
-     *
-     */
     private static readonly temporary = madness["temporary"] as MadnessList;
 
-    /**
-     *
-     */
     private static readonly indefinite = madness["indefinite"] as MadnessList;
 
-    /**
-     *
-     */
     private static readonly phobia = madness["phobia"] as MadnessList;
 
-    /**
-     *
-     */
     private static readonly mania = madness["mania"] as MadnessList;
 
     // /**

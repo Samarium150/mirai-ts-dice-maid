@@ -29,10 +29,6 @@ import Config from "./config";
  */
 export abstract class Maid {
 
-    /**
-     *
-     * @private
-     */
     private static config = readConfig("config/maid-config.json");
 
     /**

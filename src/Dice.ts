@@ -27,9 +27,6 @@ import XRegExp from "xregexp";
  */
 export abstract class Dice {
 
-    /**
-     *
-     */
     private static config: Config;
 
     /**
@@ -40,9 +37,6 @@ export abstract class Dice {
         this.config = config;
     }
 
-    /**
-     * @return
-     */
     private static generate(): string {
         const strength = sum(random.dice(6, 3)) * 5,
             constitution = sum(random.dice(6, 3)) * 5,
@@ -77,12 +71,6 @@ export abstract class Dice {
         return result.trim();
     }
 
-    /**
-     *
-     * @param skill
-     * @param result
-     * @return
-     */
     private static getResult(skill: number, result: number): string {
         const half = Math.floor(skill / 2),
             fifth = Math.floor(skill / 5);
@@ -190,12 +178,6 @@ export abstract class Dice {
             + `最终结果：${skill}+${improvement}=${skill+improvement}`;
     }
 
-    /**
-     *
-     * @param dice
-     * @return
-     * @private
-     */
     private static parseDice(dice: string): [Array<string>, Array<number>] {
         const parsedDice: Array<string> = [], results: Array<number> = [];
         XRegExp.forEach(dice, XRegExp("(\\d*d\\d*)|(\\d+)"), (match) => {
