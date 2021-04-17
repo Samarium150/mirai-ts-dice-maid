@@ -4,7 +4,6 @@
 .vs/
 
 # Output
-package-lock.json
 dist/
 
 # Logs

@@ -1,6 +1,6 @@
 {
     "name": "mirai-ts-dice-maid",
-    "version": "1.0.4-beta",
+    "version": "1.0.5-beta",
     "description": "a dice bot based on mirai-ts",
     "main": "index.ts",
     "scripts": {
@@ -11,19 +11,19 @@
         "changelog": "conventional-changelog -p eslint -i CHANGELOG.md -s"
     },
     "dependencies": {
-        "mirai-ts": "^1.0.3"
+        "mirai-ts": "^1.0.4"
     },
     "devDependencies": {
-        "@types/eslint": "^7.2.7",
-        "@types/fs-extra": "^9.0.8",
+        "@types/eslint": "^7.2.10",
+        "@types/fs-extra": "^9.0.11",
         "@types/gulp": "^4.0.8",
-        "@types/jest": "^26.0.21",
-        "@types/node": "^14.14.35",
-        "@typescript-eslint/eslint-plugin": "^4.18.0",
-        "@typescript-eslint/parser": "^4.18.0",
+        "@types/jest": "^26.0.22",
+        "@types/node": "^14.14.41",
+        "@typescript-eslint/eslint-plugin": "^4.22.0",
+        "@typescript-eslint/parser": "^4.22.0",
         "conventional-changelog-cli": "^2.1.1",
-        "eslint": "^7.22.0",
-        "eslint-plugin-jest": "^24.3.2",
+        "eslint": "^7.24.0",
+        "eslint-plugin-jest": "^24.3.5",
         "fs-extra": "^9.1.0",
         "gulp": "^4.0.2",
         "gulp-eslint": "^6.0.0",
@@ -31,12 +31,12 @@
         "gulp-typescript": "^6.0.0-alpha.1",
         "jest": "^26.6.3",
         "random-js": "^2.1.0",
-        "ts-jest": "^26.5.4",
+        "ts-jest": "^26.5.5",
         "ts-node": "^9.1.1",
         "ts-node-dev": "^1.1.6",
-        "typedoc": "^0.20.32",
-        "typescript": "^4.2.3",
-        "xregexp": "^5.0.1"
+        "typedoc": "^0.20.35",
+        "typescript": "^4.2.4",
+        "xregexp": "^5.0.2"
     },
     "repository": {
         "type": "Git",

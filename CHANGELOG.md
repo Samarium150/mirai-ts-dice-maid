@@ -1,3 +1,12 @@
+## [1.0.5-beta](https://github.com/Samarium150/mirai-ts-dice-maid/compare/1.0.4-beta...1.0.5-beta) (2021-04-17)
+
+
+### build
+
+* update dependencies ([6104714](https://github.com/Samarium150/mirai-ts-dice-maid/commit/61047148f3aa6d10a8b35688deaf64ec3463a37e))
+
+
+
 ## [1.0.4-beta](https://github.com/Samarium150/mirai-ts-dice-maid/compare/1.0.3-beta...1.0.4-beta) (2021-03-20)
 
 
