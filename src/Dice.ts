@@ -40,12 +40,12 @@ export abstract class Dice {
     private static generate(): string {
         const strength = sum(random.dice(6, 3)) * 5,
             constitution = sum(random.dice(6, 3)) * 5,
-            size = (sum(random.dice(6, 3)) + 6) * 5,
+            size = (sum(random.dice(6, 2)) + 6) * 5,
             dexterity = sum(random.dice(6, 3)) * 5,
             appearance = sum(random.dice(6, 3)) * 5,
-            intelligence = (sum(random.dice(6, 3)) + 6) * 5,
+            intelligence = (sum(random.dice(6, 2)) + 6) * 5,
             power = sum(random.dice(6, 3)) * 5,
-            education = (sum(random.dice(6, 3)) + 6) * 5,
+            education = (sum(random.dice(6, 2)) + 6) * 5,
             luck = sum(random.dice(6, 3)) * 5,
             total = strength + constitution + size
                 + dexterity + appearance

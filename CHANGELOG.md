@@ -1,3 +1,17 @@
+## [1.0.6-beta](https://github.com/Samarium150/mirai-ts-dice-maid/compare/1.0.5-beta...1.0.6-beta) (2021-05-25)
+
+
+### build
+
+* update dependencies ([7607e55](https://github.com/Samarium150/mirai-ts-dice-maid/commit/7607e55c46031c33b3a8efc519958b71c9d7374b))
+* update dependencies ([870f09c](https://github.com/Samarium150/mirai-ts-dice-maid/commit/870f09c33b5624d606050cf68296776fc75a2824))
+
+### fix
+
+* correct investigator generations ([711f415](https://github.com/Samarium150/mirai-ts-dice-maid/commit/711f41566a532763dbbff4d2b7fa7604fd3c4e82))
+
+
+
 ## [1.0.5-beta](https://github.com/Samarium150/mirai-ts-dice-maid/compare/1.0.4-beta...1.0.5-beta) (2021-04-17)
 
 
