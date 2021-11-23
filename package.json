@@ -1,6 +1,6 @@
 {
     "name": "mirai-ts-dice-maid",
-    "version": "1.1.0-beta",
+    "version": "1.1.1-beta",
     "description": "a dice bot based on mirai-ts",
     "main": "index.ts",
     "scripts": {
@@ -39,6 +39,10 @@
         "typedoc": "^0.22.9",
         "typescript": "^4.5.2",
         "xregexp": "^5.1.0"
+    },
+    "resolutions": {
+        "ansi-regex": "^5.0.1",
+        "glob-parent": "^6.0.2"
     },
     "repository": {
         "type": "Git",
