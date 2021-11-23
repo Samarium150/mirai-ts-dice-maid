@@ -17,6 +17,7 @@ module.exports = {
         "indent": ["error", 4, {"SwitchCase": 1}],
         "semi": ["error", "always"],
         "linebreak-style": "off",
-        "quotes": ["error", "double"]
+        "quotes": ["error", "double"],
+        "object-curly-spacing": ["error", "always"]
     }
 };

@@ -17,7 +17,7 @@
  * @module Madness
  */
 import madness from "../resources/madness.json";
-import { MadnessType, MadnessList } from "./types";
+import { MadnessList, MadnessType } from "./types";
 import { random } from "./utils";
 
 /**

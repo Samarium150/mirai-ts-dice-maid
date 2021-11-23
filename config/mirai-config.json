@@ -1,9 +1,27 @@
 {
     "qq": 123456789,
+    "path": "",
     "settings": {
-        "host": "127.0.0.1",
-        "port": 7720,
-        "authKey": "el-psy-congroo",
-        "enableWebsocket": true
+        "adapters": [
+            "http",
+            "ws"
+        ],
+        "enableVerify": true,
+        "verifyKey": "1234567890",
+        "debug": false,
+        "singleMode": false,
+        "cacheSize": 4096,
+        "adapterSettings": {
+            "http": {
+                "host": "localhost",
+                "port": 8080,
+                "cors": [ "*" ]
+            },
+            "ws": {
+                "host": "localhost",
+                "port": 8080,
+                "reservedSyncId": -1
+            }
+        }
     }
 }

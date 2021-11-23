@@ -16,12 +16,12 @@
  *
  * @module Maid
  */
-import {MessageType} from "mirai-ts";
+import { MessageType } from "mirai-ts";
 import XRegExp from "xregexp";
 import Dice from "./Dice";
 import Madness from "./Madness";
-import {ExtraType, MadnessType} from "./types";
-import {readConfig} from "./utils";
+import { ExtraType, MadnessType } from "./types";
+import { readConfig } from "./utils";
 import Config from "./config";
 
 /**

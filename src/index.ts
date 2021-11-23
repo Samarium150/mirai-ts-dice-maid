@@ -16,20 +16,28 @@
  *
  * @module index
  */
-import {Logger, Mirai} from "mirai-ts";
+import Mirai, { Logger, MiraiApiHttpSetting } from "mirai-ts";
 import config from "../config/mirai-config.json";
 import Maid from "./Maid";
 import XRegExp from "xregexp";
-import {GroupMessage} from "mirai-ts/dist/types/message-type";
-import {MemberJoinRequestOperationType, NewFriendRequestOperationType} from "mirai-ts/dist/mirai-api-http/resp";
-import {Member} from "mirai-ts/dist/types/contact";
-import {isAt} from "mirai-ts/dist/utils/check";
+import { BotInvitedJoinGroupRequestOperationType, NewFriendRequestOperationType } from "mirai-ts/dist/mirai-api-http/resp";
+import { isAt } from "mirai-ts/dist/utils/check";
+// import { load } from "js-yaml";
+// import fs from "fs-extra";
+// import path from "path";
 
 /**
  * Mirai and Logger instance
  */
-const mirai = new Mirai(config["settings"]),
-    logger = new Logger({prefix: "[dice-maid]"});
+const logger = new Logger({ prefix: "[dice-maid]" });
+let settings: MiraiApiHttpSetting;
+try {
+    settings = config.settings as unknown as MiraiApiHttpSetting;
+} catch (e) {
+    logger.error(e);
+    process.exit(1);
+}
+const mirai = new Mirai(settings);
 
 /**
  * Main entry point
@@ -44,20 +52,20 @@ async function main(): Promise<void> {
             result = Maid.command(msg);
         if (quit && isAt(msg, config["qq"])) {
             void msg.reply("摸了摸了");
-            await mirai.api.quit((msg.sender as Member).group.id);
+            await mirai.api.quit(msg.sender.group.id);
             return;
         }
         if (hidden && result) {
-            void msg.reply(`${(msg as GroupMessage).sender.memberName}进行了一次暗骰`);
-            await mirai.api.sendTempMessage(result, msg.sender.id, (msg.sender as Member).group.id, 0);
+            void msg.reply(`${msg.sender.memberName}进行了一次暗骰`);
+            await mirai.api.sendTempMessage(result, msg.sender.id, msg.sender.group.id, 0);
         } else if (result)
             void msg.reply(result);
     });
     mirai.on("NewFriendRequestEvent", (request) => {
         void request.respond(NewFriendRequestOperationType.Accept);
     });
-    mirai.on("MemberJoinRequestEvent", (request) => {
-        void request.respond(MemberJoinRequestOperationType.Accept);
+    mirai.on("BotInvitedJoinGroupRequestEvent", (request) => {
+        void request.respond(BotInvitedJoinGroupRequestOperationType.Accept);
     });
     mirai.listen();
 }

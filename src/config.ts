@@ -25,42 +25,42 @@ export class Config {
     /**
      *
      */
-    public master = 0
+    public master = 0;
 
     /**
      *
      */
-    public prefix = "."
+    public prefix = ".";
 
     /**
      *
      */
-    public generateMax = 10
+    public generateMax = 10;
 
     /**
      *
      */
-    public timesMax = 100
+    public timesMax = 100;
 
     /**
      *
      */
-    public sidesMax = 1000
+    public sidesMax = 1000;
 
     /**
      *
      */
-    public skillDefault = 20
+    public skillDefault = 20;
 
     /**
      *
      */
-    public rate = 0
+    public rate = 0;
 
     /**
      *
      */
-    public extraMax = 5
+    public extraMax = 5;
 }
 
 export default Config;

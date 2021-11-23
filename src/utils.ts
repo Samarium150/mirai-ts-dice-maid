@@ -18,7 +18,7 @@
  */
 import Config from "./config";
 import fs from "fs-extra";
-import {Random, MersenneTwister19937} from "random-js";
+import { MersenneTwister19937, Random } from "random-js";
 
 /**
  * Instance of random number generator
@@ -56,5 +56,5 @@ export function readConfig(file: string): Config {
  * @param config
  */
 export function writeConfig(file: string, config: Config): void {
-    fs.writeJSONSync(file, config, {spaces: 4});
+    fs.writeJSONSync(file, config, { spaces: 4 });
 }

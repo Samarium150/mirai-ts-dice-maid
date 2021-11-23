@@ -14,7 +14,8 @@ const paths = {
 const project = gulpTypescript.createProject("tsconfig.json");
 
 function clean(callback: Function): void {
-    fs.rmdirSync("dist", { recursive: true });
+    if (fs.existsSync(paths.output))
+        fs.rmSync(paths.output, { recursive: true });
     callback();
 }
 

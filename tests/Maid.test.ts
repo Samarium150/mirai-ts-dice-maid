@@ -14,15 +14,14 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>
  */
-
 jest.mock("../src/utils");
-import {readConfig, random} from "../src/utils";
+import { readConfig, random } from "../src/utils";
 import Maid from "../src/Maid";
 import Config from "../src/config";
-import {ChatMessage} from "mirai-ts/dist/types/message-type";
+import { FriendMessage, GroupMessage } from "mirai-ts/dist/types/message-type";
 
 describe("validate", () => {
-    let config: Config, friendMessage: ChatMessage, groupMessage: ChatMessage;
+    let config: Config, friendMessage: FriendMessage, groupMessage: GroupMessage;
     beforeAll(() => {
         config = new Config();
         config.skillDefault = 25;
@@ -30,10 +29,10 @@ describe("validate", () => {
         friendMessage = {
             type: "FriendMessage",
             messageChain: [
-                {type: "Source", id: 0, time: 0},
-                {type: "Plain", text: ""}
+                { type: "Source", id: 0, time: 0 },
+                { type: "Plain", text: "" }
             ],
-            sender: {id: 0, nickname: "Nick", remark: "*remark*"},
+            sender: { id: 0, nickname: "Nick", remark: "*remark*" },
             plain: "",
             group: () => false,
             friend: () => true,
@@ -45,18 +44,23 @@ describe("validate", () => {
         groupMessage = {
             type: "GroupMessage",
             messageChain: [
-                {type: "Source", id: 0, time: 0},
-                {type: "Plain", text: ""}
+                { type: "Source", id: 0, time: 0 },
+                { type: "Plain", text: "" }
             ],
             sender: {
                 id: 0,
                 memberName: "Nick",
                 permission: "ADMINISTRATOR",
+                specialTitle: "title",
+                joinTimestamp: 0,
+                lastSpeakTimestamp: 0,
+                muteTimeRemaining: 0,
                 group: {
                     id: 0,
                     name: "Group",
                     permission: "ADMINISTRATOR"
-                }},
+                }
+            },
             plain: "",
             isAt: () => false,
             group: () => false,

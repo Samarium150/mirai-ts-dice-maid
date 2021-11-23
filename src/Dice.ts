@@ -19,11 +19,11 @@
  */
 import { random, sum } from "./utils";
 import Config from "./config";
-import { Rate, ExtraType } from "./types";
+import { ExtraType, Rate } from "./types";
 import XRegExp from "xregexp";
 
 /**
- * 
+ *
  */
 export abstract class Dice {
 
