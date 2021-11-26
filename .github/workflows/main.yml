@@ -22,7 +22,8 @@ jobs:
           node-version: 16
       - run: yarn install
       - run: yarn run build --if-present
-      - uses: codacy/codacy-coverage-reporter-action@master
+      - uses: codecov/codecov-action@v2
         with:
-          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-          coverage-reports: dist/coverage/lcov.info
+          token: ${{ secrets.CODECOV_TOKEN }}
+          directory: dist/coverage/
+          flags: unittests
