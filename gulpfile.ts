@@ -1,9 +1,10 @@
 import gulp from "gulp";
 import gulpTypedoc from "gulp-typedoc";
 import gulpTypescript from "gulp-typescript";
+import gulpEslint from "gulp-eslint";
+import gulpJest from "gulp-jest";
 import * as path from "path";
 import fs from "fs-extra";
-import eslint from "gulp-eslint";
 
 const paths = {
     root: path.join(__dirname, "/"),
@@ -13,23 +14,32 @@ const paths = {
 
 const project = gulpTypescript.createProject("tsconfig.json");
 
-function clean(callback: Function): void {
+async function clean(): Promise<void> {
     if (fs.existsSync(paths.output))
-        fs.rmSync(paths.output, { recursive: true });
-    callback();
+        await fs.rm(paths.output, { recursive: true });
 }
 
-function build(): any {
+function test() {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+    return gulp.src(["tests/"]).pipe(
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+        gulpJest()
+    ) as NodeJS.ReadWriteStream;
+}
+
+function build() {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
     return gulp.src(["src/**/*.ts"]).pipe(
-        eslint()
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+        gulpEslint()
     ).pipe(
         project()
     ).pipe(
         gulp.dest(paths.output)
-    );
+    ) as NodeJS.ReadWriteStream;
 }
 
-function doc(): any {
+function doc() {
     return gulp.src(["src/"]).pipe(
         gulpTypedoc({
             out: path.join(paths.output, "/docs"),
@@ -38,4 +48,4 @@ function doc(): any {
     );
 }
 
-export default gulp.series(clean, gulp.parallel(build, doc));
+export default gulp.series(clean, test, gulp.parallel(build, doc));

@@ -1,5 +1,3 @@
-import {MadnessType} from "../src/types";
-
 /**
  * Copyright (c) 2020-2021 Samarium
  *
@@ -16,8 +14,9 @@ import {MadnessType} from "../src/types";
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>
  */
-import {random} from "../src/utils";
+import { random } from "../src/utils";
 import Madness from "../src/Madness";
+import { MadnessType } from "../src/types";
 
 describe("validate", () => {
 

@@ -58,3 +58,34 @@ export function readConfig(file: string): Config {
 export function writeConfig(file: string, config: Config): void {
     fs.writeJSONSync(file, config, { spaces: 4 });
 }
+
+/**
+ * Check and make directory
+ *
+ * @param dir
+ */
+export function checkAndMakeDir(dir: string): void {
+    if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir);
+    }
+}
+
+/**
+ * Logger class
+ */
+export class FileLogger {
+
+    private readonly fd: number;
+
+    public constructor(filename: string) {
+        this.fd = fs.openSync(filename, "a");
+    }
+
+    private static getTimeString(): string {
+        return new Date().toLocaleString("zh-CN", { hour12: false, timeZoneName: "short" });
+    }
+
+    public log(who: string, message: string) {
+        fs.writeSync(this.fd, `[${FileLogger.getTimeString()}] [${who}] ${message}\n`);
+    }
+}

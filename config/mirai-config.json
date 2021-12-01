@@ -1,13 +1,12 @@
 {
-    "qq": 123456789,
-    "path": "",
+    "qq": 1234567890,
     "settings": {
         "adapters": [
             "http",
             "ws"
         ],
         "enableVerify": true,
-        "verifyKey": "1234567890",
+        "verifyKey": "el-psy-congroo",
         "debug": false,
         "singleMode": false,
         "cacheSize": 4096,

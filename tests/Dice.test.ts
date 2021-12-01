@@ -15,10 +15,10 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>
  */
 import XRegExp from "xregexp";
-import {random} from "../src/utils";
+import { random } from "../src/utils";
 import Dice from "../src/Dice";
 import Config from "../src/config";
-import {ExtraType} from "../src/types";
+import { ExtraType } from "../src/types";
 
 describe("validate", () => {
     describe("dice", () => {
@@ -34,9 +34,9 @@ describe("validate", () => {
             test("generateLessThanZero", () => {
                 expect(Dice.coc("", -1)).toEqual("");
             });
-            XRegExp.addToken(/\\k/, () => "15|[2-8][0,5]|90", {scope: "all"});
-            XRegExp.addToken(/\\o/, () => "1[2-9][0,5]|[2-6][1-9][0,5]|71[0,5]|725", {scope: "all"});
-            XRegExp.addToken(/\\O/, () => "135|1[4-9][0,5]|[2-7][1-9][0,5]|80[0,5]|810", {scope: "all"});
+            XRegExp.addToken(/\\k/, () => "15|[2-8][0,5]|90", { scope: "all" });
+            XRegExp.addToken(/\\o/, () => "1[2-9][0,5]|[2-6][1-9][0,5]|71[0,5]|725", { scope: "all" });
+            XRegExp.addToken(/\\O/, () => "135|1[4-9][0,5]|[2-7][1-9][0,5]|80[0,5]|810", { scope: "all" });
             const p = XRegExp("^调查员作成Ex：\\n力量STR：\\k，体质CON：\\k，体型SIZ：\\k，\\n" +
                 "敏捷DEX：\\k，外貌APP：\\k，智力INT：\\k，\\n" +
                 "意志POW：\\k，教育EDU：\\k，幸运LUC：\\k\\n" +
