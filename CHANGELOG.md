@@ -1,4 +1,30 @@
-## [1.0.6-beta](https://github.com/Samarium150/mirai-ts-dice-maid/compare/1.0.5-beta...1.0.6-beta) (2021-05-25)
+# [1.2.0-beta](https://github.com/Samarium150/mirai-ts-dice-maid/compare/1.1.1-beta...1.2.0-beta) (2021-12-06)
+
+
+### chore
+
+* update README ([9a2a4b9](https://github.com/Samarium150/mirai-ts-dice-maid/commit/9a2a4b900eae6ec0db13f7185fd3342752fb6d63))
+
+### ci
+
+* update GitHub Actions ([750ac1c](https://github.com/Samarium150/mirai-ts-dice-maid/commit/750ac1c0284aa84af421efe2355b04cad145b865))
+
+### feat
+
+* add logging to file ([726d6b4](https://github.com/Samarium150/mirai-ts-dice-maid/commit/726d6b421a6471e1b25a84b12557912eda6bad50))
+
+
+
+## [1.1.1-beta](https://github.com/Samarium150/mirai-ts-dice-maid/compare/1.1.0-beta...1.1.1-beta) (2021-11-23)
+
+
+### build
+
+* fix dependency vulnerability ([b576490](https://github.com/Samarium150/mirai-ts-dice-maid/commit/b576490ff69b72aab3d4dcb5f8ab0bb1041aa04a))
+
+
+
+# [1.1.0-beta](https://github.com/Samarium150/mirai-ts-dice-maid/compare/1.0.5-beta...1.1.0-beta) (2021-11-23)
 
 
 ### build
@@ -6,9 +32,13 @@
 * update dependencies ([7607e55](https://github.com/Samarium150/mirai-ts-dice-maid/commit/7607e55c46031c33b3a8efc519958b71c9d7374b))
 * update dependencies ([870f09c](https://github.com/Samarium150/mirai-ts-dice-maid/commit/870f09c33b5624d606050cf68296776fc75a2824))
 
+### feat
+
+* adapt to mirai-ts 2.0 ([c64f258](https://github.com/Samarium150/mirai-ts-dice-maid/commit/c64f258ede814ee2e2edffef9974828186302372))
+
 ### fix
 
-* correct investigator generations ([711f415](https://github.com/Samarium150/mirai-ts-dice-maid/commit/711f41566a532763dbbff4d2b7fa7604fd3c4e82))
+* correct investigator generations ([22f8fdb](https://github.com/Samarium150/mirai-ts-dice-maid/commit/22f8fdbda92b1a1b79d037f7a46f685536b4bf64))
 
 
 
@@ -17,7 +47,7 @@
 
 ### build
 
-* update dependencies ([6104714](https://github.com/Samarium150/mirai-ts-dice-maid/commit/61047148f3aa6d10a8b35688deaf64ec3463a37e))
+* update dependencies ([db8e73e](https://github.com/Samarium150/mirai-ts-dice-maid/commit/db8e73eed58f727bff88d15a84c902241e461847))
 
 
 
@@ -36,7 +66,7 @@
 ### fix
 
 * add isAt checking for dismiss command ([146ab96](https://github.com/Samarium150/mirai-ts-dice-maid/commit/146ab964b20173e254d4c11e8feccac576b92b06))
-* sanity roll bug on 0 deduction ([ef16ac1](https://github.com/Samarium150/mirai-ts-dice-maid/commit/ef16ac113f3cb66ed918c78fa10853e1ea94b4bd))
+* sanity roll bug on 0 deduction ([f060fca](https://github.com/Samarium150/mirai-ts-dice-maid/commit/f060fcaf800d1d680a3695cba28a73ea55dddf68))
 
 ### perf
 
@@ -70,7 +100,7 @@
 
 
 
-## [1.0.1-beta](https://github.com/Samarium150/mirai-ts-dice-maid/compare/1.0.0-beta...1.0.1-beta) (2021-03-06)
+## [1.0.1-beta](https://github.com/Samarium150/mirai-ts-dice-maid/compare/1fcfda887b66a6e9dfc29a2ced697ec15c4e50da...1.0.1-beta) (2021-03-06)
 
 
 ### ci
@@ -79,20 +109,8 @@
 
 ### docs
 
-* update README.md ([a13e047](https://github.com/Samarium150/mirai-ts-dice-maid/commit/a13e047d2048e1ed91c6c71c0aba2a44f1bd16a4))
-
-### fix
-
-* update config when initializing ([7212ba2](https://github.com/Samarium150/mirai-ts-dice-maid/commit/7212ba260b5a25370cb18fe8c06d914ac7e30b50))
-
-
-
-# [1.0.0-beta](https://github.com/Samarium150/mirai-ts-dice-maid/compare/1fcfda887b66a6e9dfc29a2ced697ec15c4e50da...1.0.0-beta) (2021-03-06)
-
-
-### docs
-
 * add license details ([66ad057](https://github.com/Samarium150/mirai-ts-dice-maid/commit/66ad057862da300556500f5cf5ec403f8e9ecffc))
+* update README.md ([a13e047](https://github.com/Samarium150/mirai-ts-dice-maid/commit/a13e047d2048e1ed91c6c71c0aba2a44f1bd16a4))
 
 ### feat
 
@@ -103,6 +121,7 @@
 ### fix
 
 * change config format ([1a62d28](https://github.com/Samarium150/mirai-ts-dice-maid/commit/1a62d28869c203afc0c2771538f108f587c5a49e))
+* update config when initializing ([7212ba2](https://github.com/Samarium150/mirai-ts-dice-maid/commit/7212ba260b5a25370cb18fe8c06d914ac7e30b50))
 
 
 
