@@ -1,3 +1,16 @@
+## [1.2.1-beta](https://github.com/Samarium150/mirai-ts-dice-maid/compare/1.2.0-beta...1.2.1-beta) (2021-12-08)
+
+
+### build
+
+* adapt to mirai-ts 2.2.0 ([5cef485](https://github.com/Samarium150/mirai-ts-dice-maid/commit/5cef485e86a1dfb8d18c2ae4e6b1a8ae2f44c838))
+
+### chore
+
+* update CHANGELOG ([e02253c](https://github.com/Samarium150/mirai-ts-dice-maid/commit/e02253c128ed73e2888a0cfee8fb5705564c2f50))
+
+
+
 # [1.2.0-beta](https://github.com/Samarium150/mirai-ts-dice-maid/compare/1.1.1-beta...1.2.0-beta) (2021-12-06)
 
 
