@@ -16,18 +16,30 @@
  *
  * @module index
  */
-import Mirai, { Logger, Message, MiraiApiHttpSetting, UserProfile } from "mirai-ts";
+import Mirai, {
+    Logger,
+    Message,
+    MiraiApiHttpSetting,
+    UserProfile,
+    BotInvitedJoinGroupRequestOperationType,
+    NewFriendRequestOperationType,
+    check,
+    MessageType,
+    Contact
+} from "mirai-ts";
 import config from "../config/mirai-config.json";
 import Maid from "./Maid";
 import XRegExp from "xregexp";
-import { BotInvitedJoinGroupRequestOperationType, NewFriendRequestOperationType } from "mirai-ts/dist/mirai-api-http/resp";
-import { isAt } from "mirai-ts/dist/utils/check";
 import { FileLogger, checkAndMakeDir } from "./utils";
+import path from "path";
 // import { load } from "js-yaml";
 // import fs from "fs-extra";
-import path from "path";
-import { ChatMessage, MessageChain } from "mirai-ts/dist/types/message-type";
-import { Friend, Member } from "mirai-ts/dist/types/contact";
+
+const { isAt } = check;
+type Friend = Contact.Friend;
+type Member = Contact.Member;
+type MessageChain = MessageType.MessageChain;
+type ChatMessage = MessageType.ChatMessage;
 
 /**
  * Mirai and Logger instance

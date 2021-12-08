@@ -18,7 +18,10 @@ jest.mock("../src/utils");
 import { readConfig, random } from "../src/utils";
 import Maid from "../src/Maid";
 import Config from "../src/config";
-import { FriendMessage, GroupMessage } from "mirai-ts/dist/types/message-type";
+import { MessageType } from "mirai-ts";
+
+type FriendMessage = MessageType.FriendMessage;
+type GroupMessage = MessageType.GroupMessage;
 
 describe("validate", () => {
     let config: Config, friendMessage: FriendMessage, groupMessage: GroupMessage;
