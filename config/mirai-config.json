@@ -12,12 +12,12 @@
         "cacheSize": 4096,
         "adapterSettings": {
             "http": {
-                "host": "localhost",
+                "host": "127.0.0.1",
                 "port": 8080,
                 "cors": [ "*" ]
             },
             "ws": {
-                "host": "localhost",
+                "host": "127.0.0.1",
                 "port": 8080,
                 "reservedSyncId": -1
             }
